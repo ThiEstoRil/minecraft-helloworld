@@ -11,10 +11,7 @@ import thiestoril.helloworld.HelloWorld;
 
 public class GitHubCommand implements CommandExecutor{
 	
-	private HelloWorld plugin;
-	
 	public GitHubCommand(HelloWorld plugin) {
-		this.plugin = plugin;
 	}
 	
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
