@@ -5,6 +5,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import thiestoril.helloworld.commands.GitHubCommand;
+
 public class HelloWorld extends JavaPlugin{
 	PluginDescriptionFile pluginYML = getDescription();
 	public String version = ChatColor.BOLD+pluginYML.getVersion();
@@ -12,5 +14,10 @@ public class HelloWorld extends JavaPlugin{
 	
 	public void onEnable() {
 		Bukkit.getConsoleSender().sendMessage(name+" The plugin has been activated (version: "+version+")");
+		voidCommands();
+	}
+	
+	public void voidCommands() {
+		this.getCommand("github").setExecutor(new GitHubCommand(this));
 	}
 }

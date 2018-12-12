@@ -1,3 +1,7 @@
 main: thiestoril.helloworld.HelloWorld
 version: 1.0.0
 name: HeloWorld
+
+commands:
+  github:
+    description: Sens my GitHub account to the player.
