@@ -6,6 +6,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import thiestoril.helloworld.commands.GitHubCommand;
+import thiestoril.helloworld.commands.MainCommand;
 
 public class HelloWorld extends JavaPlugin{
 	PluginDescriptionFile pluginYML = getDescription();
@@ -19,5 +20,6 @@ public class HelloWorld extends JavaPlugin{
 	
 	public void voidCommands() {
 		this.getCommand("github").setExecutor(new GitHubCommand(this));
+		this.getCommand("helloworld").setExecutor(new MainCommand(this));
 	}
 }

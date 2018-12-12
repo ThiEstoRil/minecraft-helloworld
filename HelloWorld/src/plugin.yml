@@ -1,7 +1,9 @@
 main: thiestoril.helloworld.HelloWorld
 version: 1.0.0
-name: HeloWorld
+name: HelloWorld
 
 commands:
   github:
     description: Sens my GitHub account to the player.
+  helloworld:
+    description: Main command of the plugin.
