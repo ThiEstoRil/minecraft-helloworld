@@ -9,11 +9,11 @@ import org.bukkit.entity.Player;
 
 import thiestoril.helloworld.HelloWorld;
 
-public class GitHubCommand implements CommandExecutor{
+public class MainCommand implements CommandExecutor {
 	
 	private HelloWorld accesToHelloWorld;
 	
-	public GitHubCommand(HelloWorld plugin) {
+	public MainCommand(HelloWorld plugin) {
 		this.accesToHelloWorld = plugin;
 	}
 	
@@ -23,8 +23,18 @@ public class GitHubCommand implements CommandExecutor{
 			return false;
 		} else {
 			Player jugador = (Player) sender;
-			jugador.sendMessage(accesToHelloWorld.name+" My GitHub account: "+ChatColor.AQUA+"https://github.com/ThiEstoRil");
-			return true;
+			if (args.length > 0) {
+				if(args[0].equalsIgnoreCase("version")) {
+					jugador.sendMessage(accesToHelloWorld.name+ChatColor.WHITE+" Version of the plugin: "+accesToHelloWorld.version);
+					return true;
+				} else {
+					jugador.sendMessage(accesToHelloWorld.name+ChatColor.RED+" That command doesn't exist");
+					return true;
+				}
+			} else {
+				jugador.sendMessage(accesToHelloWorld.name+ChatColor.WHITE+" Use "+ChatColor.AQUA+"/helloworld version"+ChatColor.WHITE+" to see the version of the plugin");
+				return true;
+			}
 		}
 	}
 }
