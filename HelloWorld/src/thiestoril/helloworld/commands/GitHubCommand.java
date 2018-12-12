@@ -11,12 +11,15 @@ import thiestoril.helloworld.HelloWorld;
 
 public class GitHubCommand implements CommandExecutor{
 	
+	private HelloWorld accesToHelloWorld;
+	
 	public GitHubCommand(HelloWorld plugin) {
+		this.accesToHelloWorld = plugin;
 	}
 	
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if(!(sender instanceof Player)) {
-			Bukkit.getConsoleSender().sendMessage(ChatColor.RED+"You cannot execute this command in the console");
+			Bukkit.getConsoleSender().sendMessage(accesToHelloWorld.name+ChatColor.RED+"You cannot execute this command in the console");
 			return false;
 		} else {
 			Player jugador = (Player) sender;
