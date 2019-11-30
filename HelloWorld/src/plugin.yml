@@ -4,6 +4,6 @@ name: HelloWorld
 
 commands:
   github:
-    description: Sens my GitHub account to the player.
+    description: Sends my GitHub account to the player.
   helloworld:
     description: Main command of the plugin.
